@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    {
+      "id": 1,
+      "name": "María González",
+      "role": "Compañera de curso - IC6400",
+      "message": "Excelente compañero de trabajo en equipo. Siempre dispuesto a ayudar y compartir conocimientos. Su dedicación y habilidades técnicas son destacables.",
+      "date": "2024-09-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Carlos Rodríguez",
+      "role": "Compañero de equipo - IC6600",
+      "message": "Trabajar con él fue una gran experiencia. Demuestra un alto nivel de compromiso y capacidad para resolver problemas complejos. Sus aportes fueron fundamentales para el éxito del proyecto.",
+      "date": "2024-10-01T14:20:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Ana Martínez",
+      "role": "Compañera de laboratorio",
+      "message": "Muy buen programador y excelente para trabajar en equipo. Siempre tiene ideas innovadoras y sabe cómo implementarlas de manera eficiente. Recomendado al 100%.",
+      "date": "2024-09-28T09:15:00Z"
+    }
+  ]
+}

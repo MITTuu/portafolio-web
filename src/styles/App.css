@@ -1,0 +1,64 @@
+/* ==================== LOADING PAGE ==================== */
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--gray-300);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-page p {
+    margin-top: 1rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+/* ==================== SUCCESS TOAST ==================== */
+.success-toast {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--success);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    z-index: 10000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.success-toast strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.success-toast p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

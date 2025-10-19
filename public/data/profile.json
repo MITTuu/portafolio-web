@@ -1,0 +1,76 @@
+{
+  "name": "Dylan Montiel Zúñiga",
+  "bio": "Estudiante de Ingeniería en Computación en el Instituto Tecnológico de Costa Rica. Apasionado por la programación, el desarrollo de apliciones y videojuegos. Con experiencia en frameworks modernos. Me encanta aprender constantemente y enfrentar nuevos desafíos técnicos que me permitan crecer como profesional.",
+  "photo": "./public/image/profile.jpg",
+  "linkedin": "https://www.linkedin.com/in/dylanmonti",
+  "github": "https://github.com/MITTuu",
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        {
+          "name": "HTML/CSS",
+          "level": 75
+        },
+        {
+          "name": "JavaScript",
+          "level": 85
+        },
+        {
+          "name": "React",
+          "level": 75
+        },
+        {
+          "name": "Angular",
+          "level": 70
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        {
+          "name": "Python",
+          "level": 90
+        },
+        {
+          "name": "C++",
+          "level": 80
+        },
+        {
+          "name": "Java",
+          "level": 85
+        },
+        {
+          "name": "C#",
+          "level": 85
+        },
+        {
+          "name": "GDscript",
+          "level": 80
+        }
+      ]
+    },
+    {
+      "category": "Herramientas",
+      "items": [
+        {
+          "name": "Git & GitHub",
+          "level": 90
+        },
+        {
+          "name": "VS Code",
+          "level": 95
+        },
+        {
+          "name": "NetBeans",
+          "level": 85
+        },
+        {
+          "name": "Godot Engine",
+          "level": 75
+        }
+      ]
+    }
+  ]
+}
