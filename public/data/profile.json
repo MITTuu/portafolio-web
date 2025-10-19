@@ -1,7 +1,7 @@
 {
   "name": "Dylan Montiel Zúñiga",
   "bio": "Estudiante de Ingeniería en Computación en el Instituto Tecnológico de Costa Rica. Apasionado por la programación, el desarrollo de apliciones y videojuegos. Con experiencia en frameworks modernos. Me encanta aprender constantemente y enfrentar nuevos desafíos técnicos que me permitan crecer como profesional.",
-  "photo": "./public/image/profile.jpg",
+  "photo": "https://i.postimg.cc/VNXYXC10/IMG-20250817-WA0061.jpg",
   "linkedin": "https://www.linkedin.com/in/dylanmonti",
   "github": "https://github.com/MITTuu",
   "skills": [
