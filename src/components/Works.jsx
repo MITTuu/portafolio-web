@@ -47,8 +47,11 @@ export default function Works({ coursesData }) {
     }
 
     const formatDate = (dateString) => {
+        const date = new Date(dateString)
+        if (isNaN(date)) return 'Sin fecha definida'
+
         const options = { year: 'numeric', month: 'long', day: 'numeric' }
-        return new Date(dateString).toLocaleDateString('es-ES', options)
+        return date.toLocaleDateString('es-ES', options)
     }
 
     const uniqueTypes = [
@@ -60,7 +63,7 @@ export default function Works({ coursesData }) {
     return (
         <section id="works" className="section">
             <div className="container">
-                <div className="section-header">                    
+                <div className="section-header">
                     <h2 className="section-title">Proyectos Académicos</h2>
                     <p className="section-description">
                         Una colección de trabajos que reflejan mi evolución técnica
@@ -74,7 +77,7 @@ export default function Works({ coursesData }) {
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                                     <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                </svg>                                
+                                </svg>
                                 Curso
                             </label>
                             <select
@@ -97,7 +100,7 @@ export default function Works({ coursesData }) {
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
-                                </svg>                                
+                                </svg>
                                 Tipo
                             </label>
                             <select
@@ -121,7 +124,7 @@ export default function Works({ coursesData }) {
                                     <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                                     <line x1="8" y1="21" x2="16" y2="21"></line>
                                     <line x1="12" y1="17" x2="12" y2="21"></line>
-                                </svg>                                
+                                </svg>
                                 Tecnología
                             </label>
                             <select
@@ -182,7 +185,10 @@ function WorkCard({ work, formatDate }) {
             </div>
             <p className="work-description">{work.description}</p>
             <div className="work-meta">
-                <div>📅 {formatDate(work.date)}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 9H21M7 3V5M17 3V5M6 12H8M11 12H13M16 12H18M6 15H8M11 15H13M16 15H18M6 18H8M11 18H13M16 18H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="#555555ff" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+                    &nbsp;&nbsp;{formatDate(work.date)}
+                </div>
             </div>
             <div className="work-technologies">
                 {work.technologies.map(tech => (
