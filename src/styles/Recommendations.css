@@ -1,348 +1,83 @@
-/* ==================== RECOMMENDATIONS ==================== */
-.recommendations-layout {
-    display: grid;
-    gap: 2.5rem;
-    width: 100%;
-}
-
-.recommendation-form-card {
-    background: white;
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.giscus-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
     padding: 2rem;
     box-shadow: var(--shadow);
-    border: 1px solid var(--gray-200);
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.recommendation-form-card h3 {
-    font-size: 1.5rem;
-    color: var(--gray-900);
-    margin-bottom: 1.5rem;
+/* ========== ESTILOS BASE PARA COMPONENTES DE GISCUS ========== */
+.giscus-container :global(.gsc-comment-box),
+.giscus-container :global(.gsc-comment),
+.giscus-container :global(.gsc-reply-box),
+.giscus-container :global(.gsc-pagination),
+.giscus-container :global(.gsc-reactions),
+.giscus-container :global(.gsc-social-reaction-summary-item) {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-sm) !important;
 }
 
-.rec-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+/* Textarea */
+.giscus-container :global(.gsc-comment-box-textarea) {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    padding: 0.8rem !important;
 }
 
-.form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
+/* Placeholder */
+.giscus-container :global(.gsc-comment-box-textarea::placeholder) {
+    color: rgba(255, 255, 255, 0.4) !important;
 }
 
-.form-row input,
-.form-row textarea {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    font-size: 1rem;
-    transition: var(--transition);
-    background: var(--gray-50);
+/* Autor, contenido, metadata */
+.giscus-container :global(.gsc-comment-author) {
+    color: white !important;
+    font-weight: 600 !important;
 }
 
-.form-row input:focus,
-.form-row textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: white;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+.giscus-container :global(.gsc-comment-content),
+.giscus-container :global(.color-text-primary) {
+    color: rgba(255, 255, 255, 0.85) !important;
 }
 
-.form-row textarea {
-    resize: none;
-    min-height: 120px;
-    font-family: inherit;
+.giscus-container :global(.color-text-secondary),
+.giscus-container :global(.gsc-comment-metadata) {
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
-.recommendations-list {
-    display: grid;
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.recommendation-card {
-    background: white;
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    border-left: 4px solid var(--primary);
-    transition: var(--transition);
-    width: 100%;
-}
-
-.recommendation-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateX(4px);
-}
-
-.recommendation-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.recommendation-author {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--gray-900);
-}
-
-.recommendation-role {
-    color: var(--gray-600);
-    font-size: 0.9rem;
-}
-
-.recommendation-date {
-    color: var(--gray-500);
-    font-size: 0.85rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.recommendation-message {
-    color: var(--gray-700);
-    line-height: 1.8;
-    font-style: italic;
-    position: relative;
-    padding-left: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.recommendation-message::before {
-    content: '"';
-    position: absolute;
-    left: 0;
-    top: -0.25rem;
-    font-size: 3rem;
-    color: var(--primary);
-    opacity: 0.2;
-    line-height: 1;
-}
-
-/* ==================== PAGINATION ==================== */
-.pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--gray-200);
-    flex-wrap: wrap;
-}
-
-.pagination-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--gradient-primary);
-    color: white;
-    border: none;
-    border-radius: var(--radius-sm);
+/* Botón principal (submit / paginación etc.) */
+.giscus-container :global(button) {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    border-radius: var(--radius-sm) !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
     cursor: pointer;
-    transition: var(--transition);
-    flex-shrink: 0;
 }
 
-.pagination-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+.giscus-container :global(button:disabled) {
+    background: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
 }
 
-.pagination-btn:disabled {
-    background: var(--gray-300);
-    cursor: not-allowed;
-    opacity: 0.6;
+/* Enlaces */
+.giscus-container :global(a) {
+    color: var(--primary-light) !important;
 }
 
-.pagination-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
+.giscus-container :global(a:hover) {
+    color: white !important;
 }
 
-.pagination-text {
-    font-weight: 600;
-    color: var(--gray-900);
-    font-size: 0.95rem;
-}
-
-.pagination-count {
-    font-size: 0.85rem;
-    color: var(--gray-600);
-}
-
-/* ==================== RESPONSIVE - MOBILE ==================== */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 480px) {
-    .pagination {
-        gap: 1rem;
-        padding: 1.25rem;
-        margin-top: 1.5rem;
-    }
-
-    .pagination-btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .pagination-text {
-        font-size: 0.9rem;
-    }
-
-    .pagination-count {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .pagination {
-        gap: 0.75rem;
-        padding: 1rem;
-    }
-
-    .pagination-btn {
-        width: 32px;
-        height: 32px;
-    }
-
-    .pagination-btn svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .pagination-text {
-        font-size: 0.85rem;
-    }
-}
-@media (max-width: 480px) {
-    .recommendations-layout {
-        gap: 1.5rem;
-    }
-
-    .recommendation-form-card {
-        padding: 1.25rem;
-    }
-
-    .recommendation-form-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-    }
-
-    .rec-form {
-        gap: 1rem;
-    }
-
-    .form-row input,
-    .form-row textarea {
-        padding: 0.85rem 1rem;
-        font-size: 0.95rem;
-    }
-
-    .form-row textarea {
-        min-height: 100px;
-    }
-
-    .recommendation-card {
-        padding: 1.25rem;
-    }
-
-    .recommendation-header {
-        gap: 0.75rem;
-    }
-
-    .recommendation-author {
-        font-size: 1rem;
-    }
-
-    .recommendation-role {
-        font-size: 0.85rem;
-    }
-
-    .recommendation-date {
-        font-size: 0.8rem;
-    }
-
-    .recommendation-message {
-        padding-left: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .recommendation-message::before {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .recommendation-form-card {
-        padding: 1rem;
-    }
-
-    .recommendation-form-card h3 {
-        font-size: 1.1rem;
-    }
-
-    .form-row input,
-    .form-row textarea {
-        padding: 0.75rem 0.875rem;
-        font-size: 0.9rem;
-    }
-
-    .form-row textarea {
-        min-height: 90px;
-    }
-
-    .recommendation-card {
-        padding: 1rem;
-    }
-
-    .recommendation-header {
-        flex-direction: column;
-    }
-
-    .recommendation-date {
-        align-self: flex-start;
-    }
-
-    .recommendation-message {
-        font-size: 0.85rem;
-    }
-}
-
-/* ==================== RESPONSIVE - TABLET ==================== */
-@media (min-width: 768px) {
-    .recommendations-layout {
-        grid-template-columns: 400px 1fr;
-        gap: 2.5rem;
-    }
-
-    .recommendation-form-card {
-        padding: 2rem;
-        height: fit-content;
-        position: sticky;
-        top: 8rem;
-    }
-
-    .recommendation-card {
-        padding: 2rem;
-    }
-}
-
-/* ==================== RESPONSIVE - DESKTOP ==================== */
-@media (min-width: 1024px) {
-    .recommendation-form-card {
-        top: 8rem;
-    }
+    .giscus-container { padding: 1.25rem; }
 }
