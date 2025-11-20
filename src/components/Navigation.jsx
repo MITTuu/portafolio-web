@@ -7,7 +7,7 @@ export default function Navigation() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'profile', 'works', 'recommendations', 'blog']
+            const sections = ['home', 'profile', 'works', 'personal-projects', 'recommendations', 'blog']
             let current = 'home'
 
             sections.forEach(section => {
@@ -37,6 +37,7 @@ export default function Navigation() {
         { href: '#home', label: 'Inicio' },
         { href: '#profile', label: 'Perfil' },
         { href: '#works', label: 'Trabajos' },
+        { href: '#personal-projects', label: 'Proyectos' },        
         { href: '#recommendations', label: 'Recomendaciones' },
         { href: '#blog', label: 'Blog' }
     ]

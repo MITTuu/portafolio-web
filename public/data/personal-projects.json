@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Flappy Plane",
+      "type": "game",
+      "typeLabel": "Videojuego 2D",
+      "description": "Basado en el clásico videojuego Flappy Bird desarrollado en Godot Engine. El jugador controla un avión que debe evitar obstáculos.",
+      "image": "https://i.postimg.cc/mrMX560d/Whats-App-Image-2025-11-19-at-20-06-46.jpg",
+      "features": [
+        "Física de vuelo",
+        "Sistema de puntuación progresiva",
+        "Generación procedural de obstáculos",
+        "Efectos de sonido y música de fondo"
+      ],
+      "technologies": [
+        "Godot Engine",
+        "GDScript",
+        "2D Graphics",
+        "Game Design"
+      ],
+      "repository": "https://github.com/tu-usuario/flappy-bird-godot",
+      "demo": "https://tu-usuario.itch.io/flappy-bird"
+    },
+    {
+      "id": 2,
+      "name": "OCR App",
+      "type": "mobile",
+      "typeLabel": "Aplicación Móvil",
+      "description": "Aplicación móvil desarrollada con Flutter que permite extraer texto de imágenes usando tecnología OCR (Reconocimiento Óptico de Caracteres).",
+      "image": "https://i.postimg.cc/XJNVNFc6/ocr-f-imageonline-co-merged.jpg",
+      "features": [
+        "Selección de imágenes desde galería",
+        "Extracción de texto",
+        "Edición y copia del texto extraído"
+      ],
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "Google ML Kit"
+      ],
+      "repository": "https://github.com/MITTuu/flutter-test_OCR",
+      "demo": ""
+    }
+  ]
+}
