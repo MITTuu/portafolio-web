@@ -13,7 +13,16 @@
         "technologies": ["HTML5", "CSS3", "JavaScript"],
         "repository": "https://github.com/MITTuu/Desarrollo_Web-Proyecto-Banco_D-G.git",
         "demo": "https://bancodg.netlify.app/"
-      },      
+      },
+      {
+        "name": "Proyecto 2: API REST",
+        "type": "proyecto",
+        "description": "Desarrollar una API REST funcional y segura que sirva como backend para el Proyecto 1, implementando autenticación, control de roles y conexión con una base de datos relacional mediante Stored Procedures, de forma que los componentes visuales creados anteriormente puedan interactuar con datos reales.",
+        "date": "2025-11-02",
+        "technologies": ["Node.js", "Express.js", "PostgreSQL"],
+        "repository": "https://github.com/gadyrcdz/Proyecto02-Backend",
+        "demo": ""
+      },              
       {
         "name": "Laboratorio 1: Mi Primera Página Web",
         "type": "laboratorio",
@@ -78,22 +87,58 @@
         "demo": ""
       },      
       {
-        "name": "Laboratorio 9: API REST",
+        "name": "Laboratorio 9: API GraphQL",
         "type": "laboratorio",
         "description": "Diseñar e implementar un servidor GraphQL en Node.js que reemplace los endpoints REST del Lab 8 por queries y mutations equivalentes, con JWT para autenticación/autorización y persistencia en archivos JSON.",
         "date": "2025-10-12",
         "technologies": ["Node.js", "Express", "JavaScript", "Postman"],
+        "repository": "https://github.com/MITTuu/lab10-react.git",
+        "demo": ""
+      },
+      {
+        "name": "Laboratorio 10: Componente React que  consume API",
+        "type": "laboratorio",
+        "description": "Desarrollar un componente en React que consuma un API protegido mediante API Key, aplicando los hooks useState y useEffect para manejar estados, efectos y peticiones asíncronas.",
+        "date": "2025-10-24",
+        "technologies": ["Node.js", "Express", "JavaScript", "Postman"],
         "repository": "https://github.com/gadyrcdz/Lab09-GraphQL",
         "demo": ""
       },
+      {
+        "name": "Laboratorio 11: Quizziz",
+        "type": "laboratorio",
+        "description": "Responder preguntas sobre el tema visto en clase.",
+        "date": "",
+        "technologies": [],
+        "repository": "",
+        "demo": ""
+      }, 
+      {
+        "name": "Laboratorio 12: Presentación Django en desarrollo web",
+        "type": "laboratorio",
+        "description": "Investigar y preparar un video sobre el desarrollo web con Django.",
+        "date": "2025-10-31",
+        "technologies": [],
+        "repository": "",
+        "demo": "https://drive.google.com/file/d/1WoR89hA766-pWlRWMOKbLk5aqk_hpy6-/view"
+      },
+      {
+        "name": "Laboratorio 13: Chatbot",
+        "type": "laboratorio",
+        "description": "Investigar y preparar un video sobre el desarrollo web con Django.",
+        "date": "2025-10-31",
+        "technologies": ["HTML5", "CSS3", "JavaScript"],
+        "repository": "https://github.com/MITTuu/Laboratorio-13_Chatbot",
+        "demo": ""
+      },                    
       {
         "name": "Portafolio de trabajos - Desarrollo Web",
         "type": "portafolio",
         "description": "Diseñar, desarrollar y mantener un portafolio web personal que integre de manera estructurada y funcional los trabajos desarrollados a lo largo del curso, aplicando progresivamente los conocimientos adquiridos en diseño, desarrollo, control de calidad y despliegue de aplicaciones web.",
         "date": "2025-10-12",
         "technologies": ["React", "JavaScript", "HTML5", "CSS3"],
-        "repository": "",
-        "demo": ""
+        "repository": "https://github.com/MITTuu/portafolio-web",
+        "demo": "https://capable-mochi-b0a285.netlify.app"
       }
     ]
   },
