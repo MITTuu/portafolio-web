@@ -7,18 +7,23 @@ export default function Navigation() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'profile', 'works', 'personal-projects', 'recommendations', 'blog']
-            let current = 'home'
+            const sections = ['home', 'profile', 'hobbies', 'works', 'personal-projects', 'recommendations', 'blog'];
+            let current = 'home';
 
             sections.forEach(section => {
-                const element = document.getElementById(section)
-                if (element && element.offsetTop - 300 <= window.scrollY) {
-                    current = section
-                }
-            })
+                const el = document.getElementById(section);
+                if (!el) return;
 
-            setActiveLink(current)
-        }
+                const rect = el.getBoundingClientRect();
+
+                if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= window.innerHeight * 0.3) {
+                    current = section;
+                }
+            });
+
+            setActiveLink(current);
+        };
+
 
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
@@ -36,8 +41,9 @@ export default function Navigation() {
     const links = [
         { href: '#home', label: 'Inicio' },
         { href: '#profile', label: 'Perfil' },
+        { href: '#hobbies', label: 'Hobbies' },
         { href: '#works', label: 'Trabajos' },
-        { href: '#personal-projects', label: 'Proyectos' },        
+        { href: '#personal-projects', label: 'Proyectos' },
         { href: '#recommendations', label: 'Recomendaciones' },
         { href: '#blog', label: 'Blog' }
     ]

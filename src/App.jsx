@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import BackgroundShapes from './components/BackgroundShapes';
 import PersonalProjects from './components/PersonalProjects';
+import Hobbies from './components/Hobbies';
 
 import './styles/App.css';
 import './styles/Navigation.css';
@@ -17,7 +18,8 @@ import './styles/Profile.css';
 import './styles/Recommendations.css';
 import './styles/Blog.css';
 import './styles/Footer.css';
-import './styles/PersonalProjects.css'
+import './styles/PersonalProjects.css';
+import './styles/Hobbies.css';
 
 export default function App() {
   const [profileData, setProfileData] = useState(null);
@@ -80,10 +82,11 @@ export default function App() {
   return (
     <div className="App">
       <BackgroundShapes />
-      <Navigation />    
+      <Navigation />
       <Hero profileData={profileData} />
       <Profile profileData={profileData} />
-      <Works coursesData={coursesData} />      
+      <Hobbies />
+      <Works coursesData={coursesData} />
       <PersonalProjects />
       <Recommendations />
       <Blog />

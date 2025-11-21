@@ -1,0 +1,118 @@
+{
+    "hobbies": [
+        {
+            "id": "gaming",
+            "category": "gaming",
+            "title": "Videojuegos Móviles",
+            "description": "Me encantan los videojuegos móviles por su accesibilidad y diseño innovador. Disfruto especialmente de juegos que combinan estrategia, habilidad y narrativa envolvente.",
+            "highlights": [
+                "Interesado en el diseño de mecánicas de juego móvil",
+                "Explorador de nuevos lanzamientos y géneros emergentes"
+            ],
+            "favorites": [
+                {
+                    "name": "Brawl Stars",
+                    "description": "Partidas multijugador rápidas con distintos modos de juego",
+                    "image": ""
+                },
+                {
+                    "name": "Guardian Tales",
+                    "description": "Action RPG con exploración, puzles y narrativa estilo retro",
+                    "image": ""
+                },
+                {
+                    "name": "Terraria",
+                    "description": "Aventura sandbox 2D centrada en exploración, construcción y combate",
+                    "image": ""
+                },
+                {
+                    "name": "Stardew Valley",
+                    "description": "Simulador de granja con elementos de rol, relaciones y exploración",
+                    "image": ""
+                }
+            ],
+            "stats": []
+        },
+        {
+            "id": "sports",
+            "category": "sports",
+            "title": "Voleibol",
+            "description": "El voleibol es mi deporte favorito. Me encanta la dinámica de equipo, la estrategia en cada jugada y la satisfacción de un buen juego.",
+            "highlights": [
+                "Jugador activo en equipos recreativos",
+                "Posición preferida: Opuesto",
+                "Entrenamiento regular 2 veces por semana",
+                "Participación en torneos locales"
+            ],
+            "favorites": [
+                {
+                    "name": "Japon",
+                    "description": "Selección nacional favorita",
+                    "image": ""
+                },
+                {
+                    "name": "Yuji Nishida",
+                    "description": "Jugador profesional inspiración",
+                    "image": ""
+                }
+            ],
+            "stats": [
+                {
+                    "value": "5+",
+                    "label": "Años jugando"
+                },
+                {
+                    "value": "2x",
+                    "label": "Por semana"
+                }
+            ]
+        },
+        {
+            "id": "reading",
+            "category": "reading",
+            "title": "Lectura",
+            "description": "La lectura es mi escape favorito. Disfruto leer historias de diferentes culturas, especialmente la narrativa japonesa y coreana a través de manga y manhwa.",
+            "highlights": [
+                "Lector activo de manga, manhwa y novelas",
+                "Seguimiento de series en emisión"
+            ],
+            "favorites": [
+                {
+                    "name": "One Piece",
+                    "description": "Manga shonen épico de aventuras",
+                    "image": ""
+                },
+                {
+                    "name": "Solo Leveling",
+                    "description": "Manhwa de acción y fantasy",
+                    "image": ""
+                },
+                {
+                    "name": "Tower of God",
+                    "description": "Manhwa de aventura y misterio",
+                    "image": ""
+                },
+                {
+                    "name": "Attack on Titan",
+                    "description": "Manga seinen post-apocalíptico",
+                    "image": ""
+                },
+                {
+                    "name": "The Beginning After The End",
+                    "description": "Novela web de fantasía y reencarnación",
+                    "image": ""
+                }
+            ],
+            "stats": [
+                {
+                    "value": "1000+",
+                    "label": "Títulos leídos"
+                },
+                {
+                    "value": "Daily",
+                    "label": "Frecuencia"
+                }
+            ]
+        }
+    ]
+}
