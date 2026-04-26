@@ -23,14 +23,10 @@ export default function PersonalProjects() {
 
     const getProjectIcon = (type) => {
         switch (type) {
-            case 'game':
-                return <Play size={24} />
-            case 'mobile':
-                return <Smartphone size={24} />
-            case 'web':
-                return <Globe size={24} />
-            default:
-                return <ExternalLink size={24} />
+            case 'game':   return <Play size={22} />
+            case 'mobile': return <Smartphone size={22} />
+            case 'web':    return <Globe size={22} />
+            default:       return <ExternalLink size={22} />
         }
     }
 
@@ -38,25 +34,37 @@ export default function PersonalProjects() {
         <section id="personal-projects" className="section">
             <div className="container">
                 <div className="section-header">
+                    <span className="section-label">★ QUEST LOG ★</span>
                     <h2 className="section-title">Proyectos Personales</h2>
                     <p className="section-description">
-                        Explora mis iniciativas personales más allá del ámbito académico
+                        Proyectos en el área de desarrollo de videojuegos/aplicaciones
                     </p>
                 </div>
 
                 {loading ? (
                     <div className="loading-state">
-                        <div className="spinner"></div>
                         <p>Cargando proyectos...</p>
                     </div>
                 ) : projects.length === 0 ? (
                     <div className="loading-state">
-                        <p>No hay proyectos personales disponibles aún</p>
+                        <p>No hay proyectos disponibles aún</p>
                     </div>
                 ) : (
                     <div className="personal-projects-grid">
                         {projects.map((project) => (
                             <div key={project.id} className="project-card">
+                                {/* Pixel window title bar */}
+                                <div className="project-window-bar">
+                                    <div className="project-window-dots">
+                                        <span className="project-window-dot"></span>
+                                        <span className="project-window-dot"></span>
+                                        <span className="project-window-dot"></span>
+                                    </div>
+                                    <span className="project-window-label">
+                                        {project.name?.toUpperCase() || 'PROJECT.EXE'}
+                                    </span>
+                                </div>
+
                                 <div className="project-icon-wrapper">
                                     <div className="project-icon">
                                         {getProjectIcon(project.type)}
@@ -66,20 +74,32 @@ export default function PersonalProjects() {
                                     </span>
                                 </div>
 
-                                {project.image && (
+                                {project.videoEmbed ? (
+                                    <div className="project-video-wrapper">
+                                        <iframe
+                                            className="project-video"
+                                            src={project.videoEmbed}
+                                            title={project.name}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerPolicy="strict-origin-when-cross-origin"
+                                            allowFullScreen
+                                        />
+                                    </div>
+                                ) : project.image ? (
                                     <img
                                         src={project.image}
                                         alt={project.name}
                                         className="project-image"
                                     />
-                                )}
+                                ) : null}
 
                                 <div className="project-content">
                                     <h3 className="project-name">{project.name}</h3>
                                     <p className="project-description">{project.description}</p>
 
                                     <div className="project-features">
-                                        <h4>Características principales:</h4>
+                                        <h4>► Características principales:</h4>
                                         <ul>
                                             {project.features.map((feature, idx) => (
                                                 <li key={idx}>{feature}</li>
@@ -103,8 +123,8 @@ export default function PersonalProjects() {
                                                 rel="noopener noreferrer"
                                                 className="project-link"
                                             >
-                                                <Github size={18} />
-                                                Código fuente
+                                                <Github size={16} />
+                                                Código
                                             </a>
                                         )}
                                         {project.demo && (
@@ -114,8 +134,8 @@ export default function PersonalProjects() {
                                                 rel="noopener noreferrer"
                                                 className="project-link project-link-primary"
                                             >
-                                                <ExternalLink size={18} />
-                                                Ver proyecto
+                                                <ExternalLink size={16} />
+                                                Demo
                                             </a>
                                         )}
                                     </div>

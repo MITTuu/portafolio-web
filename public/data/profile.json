@@ -1,7 +1,7 @@
 {
   "name": "Dylan Montiel Zúñiga",
   "bio": "Estudiante de Ingeniería en Computación en el Instituto Tecnológico de Costa Rica. Apasionado por la programación, el desarrollo de apliciones y videojuegos. Con experiencia en frameworks modernos. Me encanta aprender constantemente y enfrentar nuevos desafíos técnicos que me permitan crecer como profesional.",
-  "photo": "https://i.postimg.cc/VNXYXC10/IMG-20250817-WA0061.jpg",
+  "photo": "https://i.postimg.cc/65BJmnP4/Whats-App-Image-2026-04-25-at-21-16-03.jpg",
   "linkedin": "https://www.linkedin.com/in/dylanmonti",
   "github": "https://github.com/MITTuu",
   "skills": [
@@ -46,8 +46,12 @@
           "level": 85
         },
         {
+          "name": ".Net",
+          "level": 70
+        },
+        {
           "name": "GDscript",
-          "level": 80
+          "level": 70
         }
       ]
     },
@@ -59,16 +63,24 @@
           "level": 90
         },
         {
-          "name": "VS Code",
-          "level": 95
+          "name": "MySQL",
+          "level": 80
         },
         {
-          "name": "NetBeans",
+          "name": "VS Code",
           "level": 85
         },
         {
-          "name": "Godot Engine",
+          "name": "NetBeans",
           "level": 75
+        },
+        {
+          "name": "Godot Engine",
+          "level": 65
+        },
+        {
+          "name": "Unity",
+          "level": 60
         }
       ]
     }

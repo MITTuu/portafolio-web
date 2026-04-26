@@ -2,6 +2,51 @@
   "projects": [
     {
       "id": 1,
+      "name": "CEQIATEC VR Experience",
+      "type": "vr",
+      "typeLabel": "Realidad Virtual",
+      "description": "Desarrollo de una experiencia de realidad virtual en Unity para el Centro de Investigación CEQIATEC, enfocada en la visualización interactiva del proceso de análisis de ADN para la identificación de patógenos.",
+      "image": "https://i.postimg.cc/SRXFp23N/2849D911-875B-415D-9E22-2770B2710475.png",
+      "features": [
+        "Simulación interactiva del proceso de análisis de ADN",
+        "Entorno inmersivo en realidad virtual",
+        "Interacción del usuario con elementos del laboratorio",
+        "Trabajo en equipo interdisciplinario"
+      ],
+      "technologies": [
+        "Unity",
+        "C#",
+        "Virtual Reality",
+        "3D Interaction"
+      ],
+      "repository": "",
+      "demo": ""
+    },    
+    {
+      "id": 2,
+      "name": "Pac-Man IA (BFS, DFS, A*, Hill Climbing)",
+      "type": "game",
+      "typeLabel": "Videojuego con Inteligencia Artificial",
+      "description": "Implementación de Pac-Man con agentes inteligentes controlados por algoritmos de búsqueda. Incluye un sistema de toma de decisiones dinámico donde Pac-Man reacciona a amenazas, planifica rutas y adapta su comportamiento según el entorno.",
+      "image": "",
+      "features": [
+        "Implementación de algoritmos BFS, DFS, A* y Hill Climbing",
+        "Sistema de estados en Pac-Man (huida, ataque, exploración y planificación)",
+        "Memoria parcial del entorno y detección de enemigos",
+        "Comparación de comportamiento y eficiencia entre algoritmos",
+        "Optimización para evitar ciclos y movimientos erráticos"
+      ],
+      "technologies": [
+        "Python",
+        "Pygame",
+        "Artificial Intelligence",
+        "Pathfinding Algorithms"
+      ],
+      "repository": "https://github.com/MITTuu/IC6200-IA-PY1-PacMan",
+      "videoEmbed": "https://www.youtube.com/embed/IrB_N7lgIQo?si=JB3N4i9ZFN37JIDl"
+    },
+    {
+      "id": 3,
       "name": "Flappy Plane",
       "type": "game",
       "typeLabel": "Videojuego 2D",
@@ -21,9 +66,9 @@
       ],
       "repository": "",
       "demo": ""
-    },
+    },  
     {
-      "id": 2,
+      "id": 4,
       "name": "OCR App",
       "type": "mobile",
       "typeLabel": "Aplicación Móvil",
@@ -41,6 +86,6 @@
       ],
       "repository": "https://github.com/MITTuu/flutter-test_OCR",
       "demo": ""
-    }
+    }    
   ]
 }

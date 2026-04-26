@@ -7,7 +7,7 @@ export default function Navigation() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['home', 'profile', 'hobbies', 'works', 'personal-projects', 'recommendations', 'blog'];
+            const sections = ['home', 'profile', 'personal-projects'];
             let current = 'home';
 
             sections.forEach(section => {
@@ -24,14 +24,11 @@ export default function Navigation() {
             setActiveLink(current);
         };
 
-
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen)
-    }
+    const toggleMenu = () => setIsOpen(!isOpen)
 
     const handleNavClick = (href) => {
         setIsOpen(false)
@@ -39,22 +36,18 @@ export default function Navigation() {
     }
 
     const links = [
-        { href: '#home', label: 'Inicio' },
-        { href: '#profile', label: 'Perfil' },
-        { href: '#hobbies', label: 'Hobbies' },
-        { href: '#works', label: 'Trabajos' },
-        { href: '#personal-projects', label: 'Proyectos' },
-        { href: '#recommendations', label: 'Recomendaciones' },
-        { href: '#blog', label: 'Blog' }
+        { href: '#home',              label: '▶ INICIO'    },
+        { href: '#profile',           label: '◆ PERFIL'    },
+        { href: '#personal-projects', label: '★ PROYECTOS' },
     ]
 
     return (
         <nav className="navbar">
             <div className="nav-container">
                 <a href="#" className="nav-logo">
-                    <span className="logo-bracket">&lt;</span>
-                    <span className="logo-text">Portafolio</span>
-                    <span className="logo-bracket">/&gt;</span>
+                    <span className="logo-bracket">[</span>
+                    <span className="logo-text">DEV.EXE</span>
+                    <span className="logo-bracket">]</span>
                 </a>
 
                 <button
@@ -62,7 +55,7 @@ export default function Navigation() {
                     onClick={toggleMenu}
                     aria-label="Toggle navigation"
                 >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
 
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>

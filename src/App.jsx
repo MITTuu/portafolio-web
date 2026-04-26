@@ -1,25 +1,17 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import Works from './components/Works';
 import Profile from './components/Profile';
-import Recommendations from './components/Recommendations';
-import Blog from './components/Blog';
 import Footer from './components/Footer';
 import BackgroundShapes from './components/BackgroundShapes';
 import PersonalProjects from './components/PersonalProjects';
-import Hobbies from './components/Hobbies';
 
 import './styles/App.css';
 import './styles/Navigation.css';
 import './styles/Hero.css';
-import './styles/Works.css';
 import './styles/Profile.css';
-import './styles/Recommendations.css';
-import './styles/Blog.css';
 import './styles/Footer.css';
 import './styles/PersonalProjects.css';
-import './styles/Hobbies.css';
 
 export default function App() {
   const [profileData, setProfileData] = useState(null);
@@ -85,11 +77,7 @@ export default function App() {
       <Navigation />
       <Hero profileData={profileData} />
       <Profile profileData={profileData} />
-      <Hobbies />
-      <Works coursesData={coursesData} />
       <PersonalProjects />
-      <Recommendations />
-      <Blog />
       <Footer />
     </div>
   );

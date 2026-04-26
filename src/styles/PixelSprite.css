@@ -1,0 +1,206 @@
+/* ==================== PIXEL SPRITE (CSS box-shadow art) ==================== */
+/*
+  Palette:
+    skin   : #f9c784
+    hair   : #3d2b1f
+    shirt  : #7ec8e3  (sky blue — portfolio primary)
+    pants  : #2b2d42  (dark)
+    shoes  : #2b2d42
+    outline: #2b2d42
+    shadow : rgba(43,45,66,0.18)
+
+  Grid is 11 columns × 12 rows.
+  Each .px-row is one "pixel" tall (var(--px)).
+  Columns are painted with box-shadow using multiples of var(--px).
+  Format:  X Y 0 0 color  (spread=0, blur=0 → hard pixel)
+*/
+
+.pixel-sprite-wrapper {
+    --px: 8px;           /* change prop from parent for scale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: calc(var(--px) * 0.5);
+    animation: spriteFloat 2s steps(4, end) infinite;
+    filter: drop-shadow(calc(var(--px) * 0.5) calc(var(--px) * 0.5) 0 rgba(43,45,66,0.25));
+}
+
+.pixel-sprite {
+    display: flex;
+    flex-direction: column;
+    /* 11 cols wide: columns 0-10, rightmost used shadow is at col 9 + 1 unit = 10 */
+    width: calc(var(--px) * 11);
+    gap: 0;
+    line-height: 0;
+}
+
+/* Each row is an invisible block that carries the pixels via box-shadow */
+.px-row {
+    display: block;
+    width:  var(--px);
+    height: var(--px);
+    position: relative;
+}
+
+/*
+  CHARACTER — front-facing dev mascot (11 cols × 12 rows)
+  Shadow offsets: col 1 = 0px, col 2 = 1px, col 3 = 2px … col N = (N-1)*px
+  Written as multiples using calc() with CSS custom property.
+
+  Row 1  — hair top
+  Row 2  — hair
+  Row 3  — face
+  Row 4  — face / eyes
+  Row 5  — face / mouth
+  Row 6  — neck / collar
+  Row 7  — shirt
+  Row 8  — shirt arms
+  Row 9  — shirt bottom
+  Row 10 — belt / pants top
+  Row 11 — pants
+  Row 12 — shoes
+*/
+
+/* ---------- helpers: define cols as shadow entries --------- */
+/* Using inline custom properties trick for compact notation  */
+
+/* === ROW 1: hair top ===  cols 4-8 = hair */
+.row-1 { box-shadow:
+    calc(var(--px)*3)  0 0 0 #3d2b1f,
+    calc(var(--px)*4)  0 0 0 #3d2b1f,
+    calc(var(--px)*5)  0 0 0 #3d2b1f,
+    calc(var(--px)*6)  0 0 0 #3d2b1f,
+    calc(var(--px)*7)  0 0 0 #3d2b1f;
+}
+
+/* === ROW 2: full hair ===  cols 3-9 */
+.row-2 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #3d2b1f,
+    calc(var(--px)*3)  0 0 0 #3d2b1f,
+    calc(var(--px)*4)  0 0 0 #3d2b1f,
+    calc(var(--px)*5)  0 0 0 #3d2b1f,
+    calc(var(--px)*6)  0 0 0 #3d2b1f,
+    calc(var(--px)*7)  0 0 0 #3d2b1f,
+    calc(var(--px)*8)  0 0 0 #3d2b1f;
+}
+
+/* === ROW 3: hair sides + skin ===  3=hair, 4-8=skin, 9=hair */
+.row-3 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #3d2b1f,
+    calc(var(--px)*3)  0 0 0 #f9c784,
+    calc(var(--px)*4)  0 0 0 #f9c784,
+    calc(var(--px)*5)  0 0 0 #f9c784,
+    calc(var(--px)*6)  0 0 0 #f9c784,
+    calc(var(--px)*7)  0 0 0 #f9c784,
+    calc(var(--px)*8)  0 0 0 #3d2b1f;
+}
+
+/* === ROW 4: eyes row ===  outline cols, skin middle, eye pixels */
+.row-4 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #3d2b1f,
+    calc(var(--px)*3)  0 0 0 #f9c784,
+    calc(var(--px)*4)  0 0 0 #2b2d42,   /* left eye */
+    calc(var(--px)*5)  0 0 0 #f9c784,
+    calc(var(--px)*6)  0 0 0 #2b2d42,   /* right eye */
+    calc(var(--px)*7)  0 0 0 #f9c784,
+    calc(var(--px)*8)  0 0 0 #3d2b1f;
+}
+
+/* === ROW 5: mouth row ===  smile pixels */
+.row-5 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #3d2b1f,
+    calc(var(--px)*3)  0 0 0 #f9c784,
+    calc(var(--px)*4)  0 0 0 #f9c784,
+    calc(var(--px)*5)  0 0 0 #c0392b,   /* mouth center */
+    calc(var(--px)*6)  0 0 0 #f9c784,
+    calc(var(--px)*7)  0 0 0 #f9c784,
+    calc(var(--px)*8)  0 0 0 #3d2b1f;
+}
+
+/* === ROW 6: neck + collar outline */
+.row-6 { box-shadow:
+    calc(var(--px)*4)  0 0 0 #f9c784,   /* neck */
+    calc(var(--px)*5)  0 0 0 #f9c784,
+    calc(var(--px)*6)  0 0 0 #f9c784;
+}
+
+/* === ROW 7: shirt body ===  cols 2-9 */
+.row-7 { box-shadow:
+    calc(var(--px)*1)  0 0 0 #f9c784,   /* left hand */
+    calc(var(--px)*2)  0 0 0 #7ec8e3,
+    calc(var(--px)*3)  0 0 0 #7ec8e3,
+    calc(var(--px)*4)  0 0 0 #7ec8e3,
+    calc(var(--px)*5)  0 0 0 #4db5d9,   /* shirt center stripe */
+    calc(var(--px)*6)  0 0 0 #7ec8e3,
+    calc(var(--px)*7)  0 0 0 #7ec8e3,
+    calc(var(--px)*8)  0 0 0 #7ec8e3,
+    calc(var(--px)*9)  0 0 0 #f9c784;   /* right hand */
+}
+
+/* === ROW 8: shirt lower ===  cols 2-9 with outline */
+.row-8 { box-shadow:
+    calc(var(--px)*1)  0 0 0 #f9c784,
+    calc(var(--px)*2)  0 0 0 #7ec8e3,
+    calc(var(--px)*3)  0 0 0 #7ec8e3,
+    calc(var(--px)*4)  0 0 0 #7ec8e3,
+    calc(var(--px)*5)  0 0 0 #4db5d9,
+    calc(var(--px)*6)  0 0 0 #7ec8e3,
+    calc(var(--px)*7)  0 0 0 #7ec8e3,
+    calc(var(--px)*8)  0 0 0 #7ec8e3,
+    calc(var(--px)*9)  0 0 0 #f9c784;
+}
+
+/* === ROW 9: shirt bottom / belt ===  */
+.row-9 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #7ec8e3,
+    calc(var(--px)*3)  0 0 0 #7ec8e3,
+    calc(var(--px)*4)  0 0 0 #7ec8e3,
+    calc(var(--px)*5)  0 0 0 #7ec8e3,
+    calc(var(--px)*6)  0 0 0 #7ec8e3,
+    calc(var(--px)*7)  0 0 0 #7ec8e3,
+    calc(var(--px)*8)  0 0 0 #7ec8e3;
+}
+
+/* === ROW 10: pants top ===  */
+.row-10 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #2b2d42,
+    calc(var(--px)*3)  0 0 0 #2b2d42,
+    calc(var(--px)*4)  0 0 0 #2b2d42,
+    calc(var(--px)*5)  0 0 0 #ffd166,   /* belt buckle */
+    calc(var(--px)*6)  0 0 0 #2b2d42,
+    calc(var(--px)*7)  0 0 0 #2b2d42,
+    calc(var(--px)*8)  0 0 0 #2b2d42;
+}
+
+/* === ROW 11: pants lower ===  */
+.row-11 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #2b2d42,
+    calc(var(--px)*3)  0 0 0 #2b2d42,
+    calc(var(--px)*4)  0 0 0 #2b2d42,
+    calc(var(--px)*5)  0 0 0 #4a4e69,
+    calc(var(--px)*6)  0 0 0 #2b2d42,
+    calc(var(--px)*7)  0 0 0 #2b2d42,
+    calc(var(--px)*8)  0 0 0 #2b2d42;
+}
+
+/* === ROW 12: shoes ===  */
+.row-12 { box-shadow:
+    calc(var(--px)*2)  0 0 0 #2b2d42,
+    calc(var(--px)*3)  0 0 0 #2b2d42,
+    calc(var(--px)*6)  0 0 0 #2b2d42,
+    calc(var(--px)*7)  0 0 0 #2b2d42,
+    calc(var(--px)*8)  0 0 0 #2b2d42;
+}
+
+/* ==================== SCALE VARIANTS ==================== */
+@media (max-width: 480px) {
+    .pixel-sprite-wrapper { --px: 6px; }
+}
+
+@media (min-width: 768px) {
+    .pixel-sprite-wrapper { --px: 9px; }
+}
+
+@media (min-width: 1024px) {
+    .pixel-sprite-wrapper { --px: 10px; }
+}
